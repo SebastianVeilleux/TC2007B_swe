@@ -3,7 +3,7 @@
 import { Component, ErrorInfo } from "react";
 import { Text, View, Button } from 'react-native';
 
-export class ClassExample extends Component<{nombre: string}, {}> {
+export class ClassExample extends Component<{nombre: string}, {nombre: string, cuenta: number}> {
 
     // life cycle 
    // https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
@@ -19,6 +19,8 @@ export class ClassExample extends Component<{nombre: string}, {}> {
         // interna del componente
         // SIMILAR a variable de instancia PERO con funcionalidad extra
         // relaciona al ciclo de vida
+
+        this.state = {nombre: props.nombre, cuenta: 0};
    }
 
    // Si tenemos un componente definido en una clase
@@ -27,13 +29,16 @@ export class ClassExample extends Component<{nombre: string}, {}> {
         console.log("RENDER");
         return(
             <View>
-                <Text>
-                    HOLA SOY UN COMPONENTE MUY INTERESANTE!
-                </Text>
-                <text> UN PROP: {this.props.nombre} </text>
-                // title and onPressed son props
+                <Text> HOLA SOY UN COMPONENTE MUY INTERESANTE! {this.state.nombre}</Text>
+                <Text> UN PROP: {this.props.nombre} </Text>
+                <Text>Cuneta actual: {this.state.cuenta} </Text>
                 <Button title='INCREMENTAR CUENTA'
-                    onPress={() => { }} />
+                    onPress={() => {
+                        this.setState((state) => {
+                            return {cuenta: state.cuenta + 1};
+                        });
+                     }} 
+                />
             </View>
         );
    }

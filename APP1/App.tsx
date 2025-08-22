@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { ClassExample } from './classes/ClassExample';
+import { Doggy } from './classes/DoggyComponent';
 
 // Este es un componente, expresado en una funcion
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
       <ClassExample nombre='Clodomiro'/>
+      <Doggy nombre="Firulais" edad={5}/>
       <StatusBar style="auto" />
     </View>
   );
