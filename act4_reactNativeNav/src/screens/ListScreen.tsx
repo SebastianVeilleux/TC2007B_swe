@@ -38,7 +38,7 @@ export default function ListScreen({ navigation }: Props) {
                         onPress={() => navigation.navigate("Detail", { id: item.id })}
                         style={{ paddingVertical: 12 }}
                     >
-                        {/* requisito: SOLO el título en la lista */}
+                        {}
                         <Text style={{ fontSize: 16 }}>{item.title}</Text>
                     </Pressable>
                 )}

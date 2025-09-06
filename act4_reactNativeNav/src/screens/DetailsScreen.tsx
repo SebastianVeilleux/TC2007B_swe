@@ -44,9 +44,8 @@ export default function DetailScreen({ route }: Props) {
             <Text style={{ fontSize: 16, marginBottom: 4 }}>Director: {film.director}</Text>
             <Text style={{ fontSize: 16, marginBottom: 12 }}>Release: {film.release_date}</Text>
 
-            {/* opcional: mostrar también el banner
-      <Image source={{ uri: film.movie_banner }} style={{ width: "100%", height: 180 }} />
-      */}
+            {
+        }
         </ScrollView>
     );
 }
